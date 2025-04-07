@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- link css -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <title>Nhôm Kính Tiệp Khắc</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+</head>
+
+<body>
+    <!-- Plugin -->
+    <div class="plugin">
+        <a class="plugin__map" href="https://maps.app.goo.gl/s2zufvRTB5Eu1eP57" target="_blank">
+            <img src="./assets/img/plugin/google_map_48px.png" alt="google_map_plugin">
+        </a>
+        <a class="plugin__zalo" href="https://m.me/229674766899776" target="_blank">
+            <img src="./assets/img/plugin/zalo_48px.png" alt="zalo_plugin">
+        </a>
+        <a class="plugin__call" href="tel:+84935278252">
+            <img src="./assets/img/plugin/call_48px.png" alt="call_plugin">
+        </a>
+        <a class="plugin__fb" href="https://m.me/229674766899776" target="_blank">
+            <i class="fab fa-facebook-messenger" style="font-size: 50px; color: #0078FF;"></i>
+        </a>
+        <a class="plugin__topup" href="#">
+            <img src="./assets/img/plugin/top_up_48px.png" alt="topup_plugin">
+        </a>
+        <a class="plugin__sms" href="sms:+84935278252?body=Xin%20chào,%20tôi%20muốn%20liên%20hệ%20với%20bạn">
+            <img src="./assets/img/plugin/sms_48px.png" alt="zalo_plugin">
+        </a>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <!-- Top of Header -->
+            <div class="header_top top">
+                <!-- icon search on mobile device -->
+                <button class="btn mobile-btn search-btn">
+                    <i class="material-icons icon">search</i>
+                </button>
+                <img class="logo" src="./assets/img/logo.jpg" alt="logo">
+
+                <div class="top_name">
+                    <h1 class="company-name">NHÀ THẦU THI CÔNG NHÔM KÍNH TIỆP KHẮC</h1>
+                    <p class="address">78 Nguyễn Hữu Thọ, Q. Hải Châu, TP. Đà Nẵng</p>
+                </div>
+                <div class="top_contact">
+                    <i class="material-icons icon">settings_phone</i>
+                    <div>
+                        <p>HOT LINE 24/7</p>
+                        <p class="tel">0935.278.252</p>
+                    </div>
+                </div>
+                <button class="btn mobile-btn menu-btn">
+                    <i class="material-icons icon">home</i>
+                    <p>MENU</p>
+                </button>
+            </div>
+
+            <!-- Phần Navigation -->
+            <ul class="header_nav nav">
+                <li class="nav-child nav-home">
+                    <i class="material-icons icon">home</i>
+                    <p class="nav-name">TRANG CHỦ</p>
+                </li>
+                <li class="nav-child nav-introduce">
+                    <i class="material-icons icon">person</i>
+                    <p class="nav-name">GIỚI THIỆU</p>
+                </li>
+                <li class="nav-child nav-product">
+                    <i class="material-icons icon">home</i>
+                    <p class="nav-name">SẢN PHẨM</p>
+                </li>
+                <li class="nav-child nav-project">
+                    <i class="material-icons icon">home</i>
+                    <p class="nav-name">CÔNG TRÌNH THỰC TẾ</p>
+                </li>
+                <li class="nav-child nav-factory">
+                    <i class="material-icons icon">home</i>
+                    <p class="nav-name">NHÀ XƯỞNG</p>
+                </li>
+                <li class="nav-child nav-news">
+                    <i class="material-icons icon">home</i>
+                    <p class="nav-name">TIN TỨC</p>
+                </li>
+
+                <li class="nav-child nav-contact">
+                    <i class="material-icons icon">home</i>
+                    <p class="nav-name">LIÊN HỆ</p>
+                </li>
+            </ul>
+        </header>
+
+        <main>
+            <!-- Banner -->
+            <div class="banner">
+                <div class="mySlides fade">
+                    <img src="./assets/img/banner/1.jpg" alt="Ảnh 1">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./assets/img/banner/2.jpg" alt="Ảnh 2">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./assets/img/banner/3.jpg" alt="Ảnh 3">
+                </div>
+                <button class="prev" onclick="plusSlides(-1)">
+                    <i class="material-icons icon">chevron_left</i>
+                </button>
+                <button class="next" onclick="plusSlides(1)">
+                    <i class="material-icons icon">chevron_right</i>
+                </button>
+            </div>
+
+            <!-- Category -->
+            <div class="category">
+                <div class="category__top section-top">
+                    <h2 class="lv2-title title">DANH MỤC SẢN PHẨM</h2>
+                </div>
+                <div class="category__section">
+                    <div class="category__item">
+                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <img src="./assets/img/projects/1.jpg" alt="" class="item__image">
+                    </div>
+                    <div class="category__item">
+                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <img src="./assets/img/projects/1.jpg" alt="" class="item__image">
+                    </div>
+                    <div class="category__item">
+                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <img src="./assets/img/projects/1.jpg" alt="" class="item__image">
+                    </div>
+                    <div class="category__item">
+                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <img src="./assets/img/projects/1.jpg" alt="" class="item__image">
+                    </div>
+                    <div class="category__item">
+                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <img src="./assets/img/projects/1.jpg" alt="" class="item__image">
+                    </div>
+                    <div class="category__item">
+                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <img src="./assets/img/projects/1.jpg" alt="" class="item__image">
+                    </div>
+                    <div class="category__item">
+                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <img src="./assets/img/projects/1.jpg" alt="" class="item__image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project -->
+            <div class="project">
+                <div class="project_top section-top wrap-title">
+                    <h2 class="title lv2-title project_title">
+                        CÔNG TRÌNH THỰC TẾ
+                    </h2>
+                    <button class="btn project_top section_more">
+                        <span>Xem thêm</span>
+                        <i class="material-icons icon">chevron_right</i>
+                    </button>
+                </div>
+                <div class="img-list">
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/1.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/2.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/3.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/4.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/2.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/1.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/1.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/1.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/1.jpg" alt="">
+                    </div>
+                    <div class="img-wrap">
+                        <img class="logo" src="./assets/img/logo.jpg" alt="">
+                        <img class="image" src="./assets/img/projects/1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review -->
+            <div class="review">
+                <div class="review__top section-top wrap-title">
+                    <h2 class="title lv2-title">
+                        ĐÁNH GIÁ CỦA KHÁCH HÀNG
+                    </h2>
+                    <button class="btn project_top section_more">
+                        <span>Xem thêm</span>
+                        <i class="material-icons icon">chevron_right</i>
+                    </button>
+                </div>
+
+                <div class="testimonial-container">
+                    <div class="testimonial-slide" id="slide">
+                        <div class="testimonial">
+                            <div class="left">
+                                <img src="./assets/img/avatar/person-1.jpg" alt="">
+                                <span class="author">Lê Văn Chiến</span>
+                                <span class="address">Hội An, Quảng Nam</span>
+                            </div>
+                            <div class="right">
+                                <p>"Giao hàng nhanh chóng, chất lượng vượt mong đợi." Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit. Doloribus suscipit inventore ipsum excepturi
+                                    praesentium mollitia rem voluptatum a ex accusantium unde corporis laborum
+                                    voluptates, distinctio laboriosam. Ducimus sint at recusandae.</p>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="left">
+                                <img src="./assets/img/avatar/person-1.jpg" alt="">
+                                <span class="author">Lê Văn Chiến</span>
+                                <span class="address">Hội An, Quảng Nam</span>
+                            </div>
+                            <div class="right">
+                                <p>"Giao hàng nhanh chóng, chất lượng vượt mong đợi." Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit. Doloribus suscipit inventore ipsum excepturi
+                                    praesentium mollitia rem voluptatum a ex accusantium unde corporis laborum
+                                    voluptates, distinctio laboriosam. Ducimus sint at recusandae.</p>
+                            </div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="left">
+                                <img src="./assets/img/avatar/person-1.jpg" alt="">
+                                <span class="author">Lê Văn Chiến</span>
+                                <span class="address">Hội An, Quảng Nam</span>
+                            </div>
+                            <div class="right">
+                                <p>"Giao hàng nhanh chóng, chất lượng vượt mong đợi." Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit. Doloribus suscipit inventore ipsum excepturi
+                                    praesentium mollitia rem voluptatum a ex accusantium unde corporis laborum
+                                    voluptates, distinctio laboriosam. Ducimus sint at recusandae.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-list">
+                <ul class="footer-col col-1">
+                    <li class="wrap-title">
+                        <h2 class="col-title">NHÔM KÍNH TIỆP KHẮC</h2>
+                    </li>
+                    <li>
+                        <i class="material-icons icon">location_on</i>
+                        <a href="https://maps.app.goo.gl/s2zufvRTB5Eu1eP57" target="_blank">
+                            78 Nguyễn Hữu Thọ, Q. Hải Châu, TP. Đà Nẵng
+                        </a>
+                    </li>
+                    <li>
+                        <i class="material-icons icon">call</i>
+                        <p>0935.278.252</p>
+                    </li>
+                    <li>
+                        <i class="material-icons icon">email</i>
+                        <p>tiepkhacwindow@gmail.com</p>
+                    </li>
+                    <li>
+                        <i class="material-icons icon">language</i>
+                        <p>nhomkinhtiepkhac.com</p>
+                    </li>
+                </ul>
+                <ul class="footer-col col-2">
+                    <li class="wrap-title">
+                        <h2 class="col-title">LIÊN KẾT</h2>
+                    </li>
+                    <li>
+                        <i class="material-icons icon">chevron_right</i>
+                        <p>Trang chủ</p>
+                    </li>
+                    <li>
+                        <i class="material-icons icon">chevron_right</i>
+                        <p>Giới thiệu</p>
+                    </li>
+                    <li>
+                        <i class="material-icons icon">chevron_right</i>
+                        <p>Tin tức</p>
+                    </li>
+                    <li>
+                        <i class="material-icons icon">chevron_right</i>
+                        <p>Liên hệ</p>
+                    </li>
+                </ul>
+                <ul class="footer-col col-3">
+                    <li class="wrap-title">
+                        <h2 class="col-title">KẾT NỐI VỚI CHÚNG TÔI</h2>
+                    </li>
+                    <li>
+                        <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=61556329511314"
+                            data-tabs="" data-width="310px" data-height="" data-small-header="false"
+                            data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/profile.php?id=61556329511314"
+                                class="fb-xfbml-parse-ignore"><a
+                                    href="https://www.facebook.com/profile.php?id=61556329511314">NHÔM KÍNH TIỆP
+                                    KHẮC</a></blockquote>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    Copyright 2025 © NHÀ THẦU NHÔM KÍNH TIỆP KHẮC
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Banner Slide Show -->
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        // Tự động chuyển ảnh
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000); // Chuyển mỗi 5 giây
+    </script>
+
+    <script>
+        let slideReview = 0;
+        const slides = document.getElementById('slide');
+        const totalSlides = slides.children.length;
+
+        function nextSlide() {
+            slideReview++;
+            if (slideReview >= totalSlides) {
+                slideReview = 0;
+            }
+            slides.style.transform = `translateX(-${slideReview * 100}%)`;
+        }
+
+        // Tự động chuyển slide sau mỗi 3 giây
+        setInterval(nextSlide, 3000);
+    </script>
+
+    <!-- Plugin trang Facebook chân Footer -->
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0"></script>
+</body>
+
+</html>
