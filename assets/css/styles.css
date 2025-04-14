@@ -32,22 +32,34 @@ html {
 /* Title */
 .title {
   font-family: "Open Sans", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
 }
 .lv2-title {
   font-size: 26px;
   text-decoration-line: underline;
+}
+.lv3-title {
+  font-size: 20px;
+}
+
+/* Top of Mobile */
+.mobile-btn {
+  background-color: #da453f;
+  color: #fff;
 }
 
 /* Section of Top */
 .section-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  /* background-color: #da453f; */
 }
-/* Top of Mobile */
-.mobile-btn {
-  background-color: #da453f;
-  color: #fff;
+.section-top {
+}
+
+.section-main {
+  margin-top: 30px;
 }
 
 /* TODO: Plugin */
@@ -80,7 +92,7 @@ html {
 main {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 /* TODO: Header */
@@ -167,60 +179,43 @@ main {
 }
 
 /* TODO: Category */
-.category {
-}
-.category__section {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+.category__item-list {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 30px;
 }
-.category__section .category__item {
-  width: 250px;
-  height: 250px;
-  border-radius: 5px;
+.category__item-list .category__item {
+  width: 266px;
+  height: 266px;
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
-.category__section .product-title {
+.category__item-list .product-title {
   position: absolute;
   width: 100%;
   background-color: #01aef0;
   bottom: 0;
 }
-.category__section .item__image {
+.category__item-list .item__image {
   width: 100%;
 }
 
 /* TODO: Projects */
-.project {
-}
-
-.project .project_top {
+.project .project__img-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 30px;
 }
 
-.project .project_top {
-}
-
-/* .project .project_title {
-    padding: 20px;
-} */
-
-.project .img-list {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: space-between;
-  row-gap: 24px;
-}
-
-.project .img-wrap {
+.project .project__img-list .img-wrap {
   height: 376px;
   width: 266px;
-  border: 3px solid #da453f;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
-  background-color: #da453f;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: relative;
 }
 
@@ -299,41 +294,26 @@ main {
 .footer {
   background-color: var(--bg-color);
 }
-
-.footer-list {
+.footer .footer-list {
   display: flex;
   justify-content: space-between;
-  margin: 30px 10px;
 }
-
-.wrap-title {
-  background-color: #ffcc2a;
-  height: 40px;
-  text-align: left;
-}
-
-.wrap-title h2 {
-  background-color: #da453f;
-  padding: 0 8px;
-  line-height: 36px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-}
-
-.footer li {
+.footer .footer-list li {
   display: flex;
   align-items: center;
   color: #fff;
 }
-
-.footer li a {
+.footer .footer-list li a {
   color: #fff;
   text-decoration: none;
 }
+.footer .footer-bottom {
+  padding: 10px;
+  background-color: #bfbba9;
+  text-align: center;
+}
+/* 
 
-/* Chọn các thẻ li trừ thẻ li tiêu đề */
 .footer .footer-col li:not(:first-child) {
   margin-left: 20px;
   margin-top: 10px;
@@ -344,18 +324,8 @@ main {
 }
 
 .footer .footer-col li:first-child {
-  /* background-color: #FFCC2A; */
-  /* padding: 5px 2px; */
 }
-
-.footer-bottom {
-  background-color: #bfbba9;
-  text-align: center;
-}
-
-.footer-bottom > p {
-  padding: 15px 0;
-}
+*/
 
 /* TODO: Display on Computer */
 @media only screen and (min-width: 768px) {
@@ -364,7 +334,6 @@ main {
     max-width: calc(100% - 48px);
     margin: 0 auto;
   }
-
   /* Plugin */
   .plugin {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -463,12 +432,10 @@ main {
 
 /* TODO: Display on Mobile */
 @media only screen and (max-width: 767px) {
-  /* CSS áp dụng cho điện thoại */
   .container {
     width: 100%;
   }
-
-  /* Phần Plugin cho điện thoại */
+  /* Plugin */
   .plugin {
     bottom: 0;
     width: 100%;
@@ -501,14 +468,13 @@ main {
     /* Tỉ lệ 4:3 khi trên điện thoại */
   }
 
-  /* CÁC DỰ ÁN */
+  /* Project */
   .project .img-list {
     margin-top: 10px;
     grid-template-columns: auto auto;
-    justify-content: space-evenly;
+    justify-content: space-between;
     row-gap: 10px;
   }
-
   .project .img-wrap {
     width: 240px;
     height: auto;
@@ -518,7 +484,6 @@ main {
     background-color: #da453f;
     position: relative;
   }
-
   .project .img-wrap .image {
     aspect-ratio: 2/3;
   }
@@ -528,13 +493,11 @@ main {
     flex-direction: column;
     gap: 30px;
   }
-
   .footer li {
     display: flex;
     align-items: center;
     color: #fff;
   }
-
   /* Chọn các thẻ li trừ thẻ li tiêu đề */
   .footer .footer-col li:not(:first-child) {
     margin-left: 20px;
@@ -549,19 +512,16 @@ main {
     /* background-color: #FFCC2A; */
     padding: 5px 2px;
   }
-
   .footer .footer-col .col-title {
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
     font-weight: 600;
     color: #fff;
   }
-
   .footer-bottom {
     background-color: #bfbba9;
     text-align: center;
   }
-
   .footer-bottom > p {
     padding: 15px 0;
   }
