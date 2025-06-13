@@ -18,6 +18,7 @@ html {
   padding: 10px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .btn .icon {
@@ -236,32 +237,7 @@ main {
   font-family: "Open Sans", sans-serif;
 }
 
-/* Phần slide chạy */
-.testimonial-container {
-  max-width: 100%;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.testimonial-slide {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
-
-.testimonial {
-  flex: 0 0 100%; /* Đảm bảo mỗi slide chiếm toàn bộ chiều rộng */
-  padding: 20px;
-  text-align: center; /* Căn giữa nội dung bên trong */
-  display: flex; /* Sử dụng flex để căn giữa dọc và ngang */
-  /* flex-direction: column; */
-  gap: 30px;
-  justify-content: center;
-  align-items: center;
-}
-
-.testimonial .left {
+.carousel .review-box .left {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -274,20 +250,98 @@ main {
   font-style: oblique;
 }
 
-.testimonial img {
+.carousel-container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 50px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel .review-box .left .address {
+  font-size: 10px;
+  font-style: oblique;
+}
+
+.carousel .review-box img {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 999px;
 }
 
-.testimonial p {
+.carousel .review-box p {
   font-style: italic;
   margin-bottom: 10px;
 }
 
-.testimonial .author {
+.carousel .review-box .author {
   font-weight: bold;
+}
+
+.slide {
+  display: flex;
+  min-width: 100%;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.review-box {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+}
+
+.review-box img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.review-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.review-box p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* PC: Show 2 review boxes */
+@media (min-width: 768px) {
+  .review-box {
+    max-width: calc(50% - 10px); /* 2 boxes with gap */
+  }
+}
+
+/* Mobile: Show 1 review box */
+@media (max-width: 767px) {
+  .slide {
+    justify-content: center;
+  }
+
+  .review-box {
+    max-width: 100%;
+  }
+
+  .review-box:nth-child(2) {
+    display: none; /* Hide second box on mobile */
+  }
 }
 
 /* TODO: Footer */
@@ -297,6 +351,7 @@ main {
 .footer .footer-list {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 .footer .footer-list li {
   display: flex;
@@ -312,10 +367,9 @@ main {
   background-color: #bfbba9;
   text-align: center;
 }
-/* 
 
 .footer .footer-col li:not(:first-child) {
-  margin-left: 20px;
+  margin-left: 10px;
   margin-top: 10px;
 }
 
@@ -325,7 +379,6 @@ main {
 
 .footer .footer-col li:first-child {
 }
-*/
 
 /* TODO: Display on Computer */
 @media only screen and (min-width: 768px) {
