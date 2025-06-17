@@ -112,7 +112,6 @@ main {
 .banner {
   max-width: 100%;
   position: relative;
-  aspect-ratio: 16 / 9;
   background-color: #ccc;
 }
 
