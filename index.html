@@ -150,19 +150,19 @@
                 </div>
                 <div class="category__item-list section-main">
                     <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <h3 class="product-title">Cửa nhôm Xingfa 4 cánh</h3>
                         <img src="assets/img/projects/1.jpg" alt="" class="item__image">
                     </div>
                     <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <h3 class="product-title">Cửa nhôm Xingfa 2 cánh</h3>
                         <img src="assets/img/projects/1.jpg" alt="" class="item__image">
                     </div>
                     <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <h3 class="product-title">Cửa nhôm Xingfa hệ cửa lùa</h3>
                         <img src="assets/img/projects/1.jpg" alt="" class="item__image">
                     </div>
                     <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
+                        <h3 class="product-title">Kính cường lực</h3>
                         <img src="assets/img/projects/1.jpg" alt="" class="item__image">
                     </div>
                     <div class="category__item">
@@ -195,54 +195,15 @@
                         <i class="material-icons icon">chevron_right</i>
                     </button>
                 </div>
-                <div class="project__img-list section-main">
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/1.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/2.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/3.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/4.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/2.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/1.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/1.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/1.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/1.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/1.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/1.jpg" alt="">
-                    </div>
-                    <div class="img-wrap">
-                        <img class="logo" src="assets/img/logo.jpg" alt="">
-                        <img class="image" src="assets/img/projects/1.jpg" alt="">
+                <div id="project_list" class="project_list section-main"></div>
+
+                <!-- lightbox -->
+                <div id="lightbox" class="hidden">
+                    <span class="close" onclick="closeLightbox()">&times;</span>
+                    <img id="lightbox-img" src="" alt="Ảnh lớn">
+                    <div class="controls">
+                        <button id="prev" onclick="prevImage()">⟨</button>
+                        <button id="next" onclick="nextImage()">⟩</button>
                     </div>
                 </div>
             </div>
@@ -434,6 +395,70 @@
         setInterval(() => {
             plusSlides(1);
         }, 5000); // Chuyển mỗi 5 giây
+
+        // lightbox OK
+        let currentProject = [];
+        let currentImageIndex = 0;
+        function openLightbox(group) {
+            currentProject = group;
+            currentImageIndex = 0;
+            document.getElementById('lightbox').style.display = 'flex';
+            showImage();
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function showImage() {
+            document.getElementById('lightbox-img').src = currentProject[currentImageIndex];
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % currentProject.length;
+            showImage();
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + currentProject.length) % currentProject.length;
+            showImage();
+        }
+
+        fetch("projects.json")
+            .then(response => response.json())
+            .then(data => {
+                const projects = document.getElementById('project_list');
+                const lightBox = document.getElementById("lightbox-img");
+
+                data.forEach((category, index) => {
+                    const imgWrap = document.createElement('div');
+                    imgWrap.className = "img-wrap";
+
+                    const dateTitle = document.createElement("p");
+                    dateTitle.className = "img-date";
+                    dateTitle.textContent = category.date;
+
+                    const thumbnail = document.createElement('img');
+                    thumbnail.src = category.images[0];
+
+                    const logo = document.createElement('img');
+                    logo.className = "logo";
+                    logo.src = "assets/img/logo2.jpg";
+
+                    imgWrap.appendChild(dateTitle);
+                    imgWrap.appendChild(logo);
+                    imgWrap.appendChild(thumbnail);
+
+                    projects.appendChild(imgWrap);
+
+                    imgWrap.addEventListener("click", () => {
+                        openLightbox(category.images);
+                    })
+                })
+            })
+            .catch(error => console.error("Lỗi đọc JSON:", error));
+
+
     </script>
 
     <script>
@@ -493,6 +518,7 @@
     <!-- Plugin trang Facebook chân Footer -->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0">
     </script>
+
 </body>
 
 </html>
