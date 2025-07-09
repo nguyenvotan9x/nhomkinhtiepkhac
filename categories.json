@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Cửa Nhôm",
+    "thumbnail": "assets/img/categories/1.jpg",
+    "slug": "cuanhom",
+    "subitems": ["Cửa Nhôm Xingfa 4 cánh", "Cửa Nhôm Xingfa 2 cánh", "Cửa lùa"]
+  },
+  {
+    "name": "Cửa Kính",
+    "thumbnail": "assets/img/categories/2.jpg",
+    "slug": "cuakinh",
+    "subitems": ["Cửa kính mở quay", "Cửa kính trượt"]
+  }
+]

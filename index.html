@@ -117,7 +117,7 @@
             </ul>
         </header>
 
-        <main>
+        <main id="content">
             <!-- Banner -->
             <div class="banner">
                 <div class="mySlides fade">
@@ -148,39 +148,7 @@
                         <i class="material-icons icon">chevron_right</i>
                     </button>
                 </div>
-                <div class="category__item-list section-main">
-                    <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm Xingfa 4 cánh</h3>
-                        <img src="assets/img/projects/1.jpg" alt="" class="item__image">
-                    </div>
-                    <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm Xingfa 2 cánh</h3>
-                        <img src="assets/img/projects/1.jpg" alt="" class="item__image">
-                    </div>
-                    <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm Xingfa hệ cửa lùa</h3>
-                        <img src="assets/img/projects/1.jpg" alt="" class="item__image">
-                    </div>
-                    <div class="category__item">
-                        <h3 class="product-title">Kính cường lực</h3>
-                        <img src="assets/img/projects/1.jpg" alt="" class="item__image">
-                    </div>
-                    <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
-                        <img src="assets/img/projects/1.jpg" alt="" class="item__image">
-                    </div>
-                    <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
-                        <img src="assets/img/projects/1.jpg" alt="" class="item__image">
-                    </div>
-                    <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
-                        <img src="assets/img/projects/1.jpg" alt="" class="item__image">
-                    </div>
-                    <div class="category__item">
-                        <h3 class="product-title">Cửa nhôm 4 cánh</h3>
-                        <img src="assets/img/projects/1.jpg" alt="" class="item__image">
-                    </div>
+                <div id="category__list" class="category__item-list section-main">
                 </div>
             </div>
 
@@ -198,12 +166,18 @@
                 <div id="project_list" class="project_list section-main"></div>
 
                 <!-- lightbox -->
-                <div id="lightbox" class="hidden">
-                    <span class="close" onclick="closeLightbox()">&times;</span>
-                    <img id="lightbox-img" src="" alt="Ảnh lớn">
+                <div id="lightbox" class="lightbox hidden">
+                    <div id="image-counter" class="counter">1/12</div>
+                    <i class="material-icons close" onclick="closeLightbox()">close</i>
+                    <!-- <span class="close" onclick="closeLightbox()">&times;</span> -->
+                    <img id="lightbox-img" src="" alt="Ảnh Minh Hoạ">
                     <div class="controls">
-                        <button id="prev" onclick="prevImage()">⟨</button>
-                        <button id="next" onclick="nextImage()">⟩</button>
+                        <button id="prev" class="btn prev-btn" onclick="prevImage()">
+                            <i class="material-icons">arrow_back</i>
+                        </button>
+                        <button id="next" class="btn next-btn" onclick="nextImage()">
+                            <i class="material-icons">arrow_forward</i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -396,13 +370,44 @@
             plusSlides(1);
         }, 5000); // Chuyển mỗi 5 giây
 
-        // lightbox OK
+        // Add Category by Fetch
+        fetch("categories.json")
+            .then(res => res.json())
+            .then(data => {
+                const gallery = document.getElementById("category__list");
+
+                data.forEach(category => {
+                    const wrap = document.createElement("div");
+                    wrap.className = "category__item";
+
+                    const title = document.createElement("h3");
+                    title.className = "product-title";
+                    title.textContent = category.name;
+                    wrap.appendChild(title);
+
+                    const thumb = document.createElement("img");
+                    thumb.src = category.thumbnail;
+                    thumb.className = "item__image";
+                    thumb.alt = category.name;
+
+                    // Chuyển trang khi click (dùng slug)
+                    thumb.addEventListener("click", () => {
+                        loadPage(category.slug);
+                    });
+
+                    wrap.appendChild(thumb);
+                    gallery.appendChild(wrap);
+                });
+            });
+
+        // lightbox for Projects OK
         let currentProject = [];
         let currentImageIndex = 0;
         function openLightbox(group) {
             currentProject = group;
             currentImageIndex = 0;
             document.getElementById('lightbox').style.display = 'flex';
+
             showImage();
         }
 
@@ -412,6 +417,8 @@
 
         function showImage() {
             document.getElementById('lightbox-img').src = currentProject[currentImageIndex];
+            const counter = document.getElementById("image-counter");
+            counter.innerText = `${currentImageIndex + 1}/${currentProject.length}`;
         }
 
         function nextImage() {
@@ -518,6 +525,34 @@
     <!-- Plugin trang Facebook chân Footer -->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v22.0">
     </script>
+    <script>
+        // Hàm load trang con
+        function loadPage(page) {
+            fetch(`pages/${page}.html`)
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById("content").innerHTML = html;
+                    window.history.pushState({}, "", `#${page}`);
+                });
+        }
+
+        // Sử dụng khi click
+        document.querySelector(".category__item").addEventListener("click", () => {
+            loadPage("cuanhom");
+        });
+
+        // Load lại khi user bấm nút Back/Forward
+        window.addEventListener("popstate", () => {
+            const page = location.hash.replace("#", "") || "home";
+            loadPage(page);
+        });
+
+        // Tự động load nếu đang ở #cuanhom
+        if (location.hash) {
+            loadPage(location.hash.replace("#", ""));
+        }
+    </script>
+
 
 </body>
 
